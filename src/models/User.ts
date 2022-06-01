@@ -1,4 +1,4 @@
-import { Schema, model, Types } from "mongoose";
+import {Schema, model, Types} from "mongoose";
 
 import bcrypt from "bcrypt";
 
@@ -30,9 +30,9 @@ const userSchema = new Schema<IUser>(
       type: String,
       enum: ["admin", "user"],
       default: "user",
-    },
+    }
   },
-  { timestamps: true }
+  {timestamps: true}
 );
 
 userSchema.pre("save", async function () {
