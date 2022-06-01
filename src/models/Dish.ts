@@ -39,4 +39,4 @@ const dishSchema = new Schema<IDish>(
   { timestamps: true }
 );
 
-export const Category = model<IDish>("Dish", dishSchema);
+export const Dish = model<IDish>("Dish", dishSchema);
