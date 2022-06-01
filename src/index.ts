@@ -4,7 +4,7 @@ import "express-async-errors";
 import express from "express";
 
 import { connectDB } from "./db/connect";
-// import { errorHandlerMiddleware, notFoundMiddleware } from "./middleware";
+import { errorHandlerMiddleware, notFoundMiddleware } from "./middleware";
 
 import fileUpload from "express-fileupload";
 import { v2 as cloudinary } from "cloudinary";
@@ -48,8 +48,8 @@ app.get('/', (req, res) => {
   res.send('Work');
 })
 
-// app.use(notFoundMiddleware);
-// app.use(errorHandlerMiddleware);
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 5000;
 
