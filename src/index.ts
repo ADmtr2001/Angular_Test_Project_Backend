@@ -10,6 +10,7 @@ import fileUpload from "express-fileupload";
 import { v2 as cloudinary } from "cloudinary";
 import helmet from "helmet";
 import cors from "cors";
+import {dishRouter} from "./routes";
 
 // import {
 //   announcementRouter,
@@ -40,8 +41,7 @@ app.use(express.json());
 app.use(fileUpload({ useTempFiles: true }));
 
 // app.use("/api/v1/user", userRouter);
-// app.use("/api/v1/comment", commentRouter);
-// app.use("/api/v1/announcement", announcementRouter);
+app.use("/api/v1/dish", dishRouter);
 // app.use("/api/v1/category", categoryRouter);
 
 app.get('/', (req, res) => {

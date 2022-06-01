@@ -6,7 +6,8 @@ export interface IDish {
   category: Types.ObjectId;
   description: string;
   image: string;
-  ingredients: {name: string, amount: number}[];
+  imageId: string;
+  ingredients: string[];
 }
 
 const dishSchema = new Schema<IDish>(
@@ -30,10 +31,14 @@ const dishSchema = new Schema<IDish>(
     },
     image: {
       type: String,
-      required: [true, 'Please provide dish image']
+      required: [true, "Please provide image"],
+    },
+    imageId: {
+      type: String,
+      required: [true, "Please provide image id"],
     },
     ingredients: {
-      type: [{name: String, amount: Number}],
+      type: [String],
       required: [true, 'Please provide dish ingredients']
     },
   },
