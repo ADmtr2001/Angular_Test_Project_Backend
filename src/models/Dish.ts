@@ -21,6 +21,7 @@ const dishSchema = new Schema<IDish>(
     },
     category: {
       type: Schema.Types.ObjectId,
+      ref: 'Category',
       required: [true, 'Please provide dish category']
     },
     description: {

@@ -6,9 +6,12 @@ export interface IShoppingCart {
 
 const shoppingCartSchema = new Schema<IShoppingCart>(
   {
-    dishes: [{dish: Types.ObjectId, amount: Number}]
+    dishes: {
+      type: [{dish: Schema.Types.ObjectId, amount: Number}],
+      required: [true, 'Please provide shopping cart dishes'],
+    }
   },
   { timestamps: true }
 );
 
-export const ShoppingCart = model<IShoppingCart>("Dish", shoppingCartSchema);
+export const ShoppingCart = model<IShoppingCart>("ShoppingCart", shoppingCartSchema);
